@@ -1,1 +1,111 @@
-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura - Sistema de Facturación</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Encabezado de la factura -->
+        <div class="invoice-header">
+            <div class="company-info">
+                <h1>TechSolutions S.A.</h1>
+                <p>Av. Principal #123, Guayaquil | Tel: +593 4 123-4567 | RUC: 0999999999001</p>
+            </div>
+            <div class="invoice-number">
+                <h2>FACTURA</h2>
+                <p>#FAC-2025-0142</p>
+                <p style="font-size: 11px; margin-top: 3px;">27/10/2025</p>
+            </div>
+        </div>
+        <!-- Detalles de facturación -->
+        <div class="invoice-details">
+            <div class="detail-box">
+                <h3>Cliente</h3>
+                <p>Empresa ABC Corp.</p>
+                <p>RUC: 0912345678001</p>
+                <p>Guayaquil, Ecuador</p>
+            </div>
+            <div class="detail-box">
+                <h3>Información</h3>
+                <p>Emisión: 27/10/2025</p>
+                <p>Vencimiento: 10/11/2025</p>
+                <p>Forma de Pago: Transferencia</p>
+            </div>
+        </div>
+        <!-- Formulario para agregar productos -->
+        <div class="add-product-section">
+            <h3>Agregar Producto / Servicio</h3>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="producto">Seleccionar Producto/Servicio</label>
+                    <select id="id-select-producto">
+                        <option value="">--Seleccione--</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="cantidad">Cantidad</label>
+                    <input type="number" id="id-txt-cantidad" min="1" value="1">
+                </div>
+                <div class="form-group">
+                    <label for="precio">Precio Unitario</label>
+                    <input type="text" id="id-txt-precio" value="$0.00" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="total">Total</label>
+                    <input type="text" id="id-txt-total" value="$0.00" readonly>
+                </div>
+                <div class="form-group">
+                    <button class="btn-add" id="id-btn-agregar">+ Agregar</button>
+                </div>
+            </div>
+        </div>
+        <!-- Contenido principal -->
+        <div class="invoice-content">
+            <!-- Tabla de artículos -->
+            <div class="table-container">
+                <table class="items-table" id="id-table-detalle">
+                    <thead>
+                        <tr>
+                            <th>Cod.</th>
+                            <th>Descripción</th>
+                            <th style="width: 80px;">P. Unit.</th>
+                            <th style="width: 60px;">Cant.</th>
+                            <th style="width: 80px;">Total</th>
+                            <th style="width: 50px;">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td colspan="6" style="text-align-last: center;">No hay productos en la factura</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Sección de totales -->
+            <div class="totals-box">
+                <h3>Resumen</h3>
+                <div class="total-row subtotal">
+                    <span>Subtotal:</span>
+                    <span id="id-txt-subtotal">$0.00</span>
+                </div>
+                <div class="total-row tax">
+                    <span>IVA (15%):</span>
+                    <span id="id-txt-iva">$0.00</span>
+                </div>
+                <div class="total-row">
+                    <span>Descuento:</span>
+                    <span id="id-txt-descuento">$0.00</span>
+                </div>
+                <div class="total-row grand-total">
+                    <span>TOTAL:</span>
+                    <span id="id-txt-total-pagar">$0.00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
