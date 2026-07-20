@@ -1,4 +1,3 @@
-# Sistema-de-Facturaci-n
 # Sistema de Facturación Web
 
 ## Introducción
